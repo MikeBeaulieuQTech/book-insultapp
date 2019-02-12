@@ -1,6 +1,5 @@
 package org.openshift;
 
-import java.util.Random;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,8 +7,8 @@ import java.sql.Statement;
 
 public class InsultGenerator {
 	public String generateInsult() {
-		String words[][] = {{"Artless", "Bawdy", "Beslubbering"}, {"Base-court", "Bat-fowling", "Beef-witted"}, {"Apple-john", "Baggage", "Barnacle"}};
 		String vowels = "AEIOU";
+		String article = "an";
 		String theInsult = "";
 		try {
 			String databaseURL = "jdbc:postgresql://";   
@@ -35,13 +34,7 @@ public class InsultGenerator {
 					return "Database connection problem!";  
 				}  
 				return theInsult; 
-			} 
-		} 
 
-
-			
-
-		return String.format("Thou art %s %s %s %s!", article, firstAdjective, secondAdjective, noun);
 	}
 
 }
